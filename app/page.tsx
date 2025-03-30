@@ -1,4 +1,3 @@
-import Footer from "@/components/footer";
 
 export default function Home() {
   return (
@@ -71,7 +70,7 @@ export default function Home() {
           </h3>
           <div className="text-gray-400 p-5">
             <span>
-              We're happy to help!
+              We&apos;re happy to help!
               Feel free to contact us at: <a href="mailto:info@lehmanfamilyllc.com">info@lehmanfamilyllc.com</a>.
             </span>
             <div>
