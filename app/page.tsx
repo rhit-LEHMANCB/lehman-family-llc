@@ -1,82 +1,98 @@
+import { IconMail, IconPhone } from "@tabler/icons-react";
+import { FloatingNav } from "@/components/ui/floating-navbar";
+import { Reveal } from "@/components/reveal";
+import { SectionHeading } from "@/components/section-heading";
+
+const navItems = [
+  { name: "Home", link: "#home" },
+  { name: "Our Work", link: "#work" },
+  { name: "Our Team", link: "#team" },
+];
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center">
-      {/* Hero Section */}
-      <section className="relative w-full h-screen">
-        {/* Hero Background Image */}
-        <div className="absolute inset-0 bg-cover bg-center z-0" 
-          style={{
-            backgroundImage: "url('/house.webp')",
-            backgroundSize: "cover",
-          }}
+    <main className="flex min-h-screen flex-col bg-neutral-950 text-white">
+      <FloatingNav navItems={navItems} />
+
+      {/* Hero */}
+      <section id="home" className="relative h-screen min-h-[600px] w-full overflow-hidden">
+        <div
+          className="absolute inset-0 scale-105 bg-cover bg-center"
+          style={{ backgroundImage: "url('/house.webp')" }}
         />
-        
-        {/* Overlay to slightly darken the image */}
-        <div className="absolute inset-0 bg-black/10 z-10"></div>
-        
-        {/* Content Container */}
-        <div className="relative z-20 flex flex-col items-center justify-between h-full pb-32">
-          {/* Header/Logo Area */}
-          <div className="w-full py-4 bg-black/30">
-            <h1 className="text-4xl font-bold tracking-wider text-white text-center">
-              LEHMAN FAMILY LLC
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-neutral-950" />
+        <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
+          <Reveal>
+            <p className="mb-6 text-xs font-medium uppercase tracking-[0.4em] text-amber-400">
+              Family Owned
+            </p>
+            <h1 className="text-5xl font-light tracking-[0.15em] md:text-7xl">
+              LEHMAN
+              <span className="block font-semibold">FAMILY LLC</span>
             </h1>
-          </div>
-          
-          {/* Center Content
-          <div className="flex flex-col items-center justify-center space-y-12">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-6xl md:text-7xl font-light text-white text-center"
-            >
-              Insert Slogan Here
-            </motion.h2>
-            
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="bg-white text-black hover:bg-gray-200 font-semibold text-lg px-8 py-6 h-auto"
-            >
-              VIEW PROPERTIES
-            </Button>
-          </div> */}
+            <div className="mx-auto mt-8 h-px w-24 bg-gradient-to-r from-transparent via-amber-400 to-transparent" />
+          </Reveal>
+        </div>
+        <a
+          href="#work"
+          aria-label="Scroll to content"
+          className="absolute bottom-8 left-1/2 z-10 h-12 w-7 -translate-x-1/2 rounded-full border border-white/40"
+        >
+          <span className="mx-auto mt-2 block h-2 w-1 animate-bounce rounded-full bg-white/70" />
+        </a>
+      </section>
+
+      {/* Our Work */}
+      <section id="work" className="px-6 py-28">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading eyebrow="Portfolio" title="Our Work" />
+          <Reveal className="mx-auto max-w-2xl rounded-2xl border border-white/10 bg-white/[0.03] p-10 text-center">
+            <p className="text-neutral-400">
+              Our portfolio is coming soon. Check back for updates.
+            </p>
+          </Reveal>
         </div>
       </section>
 
-      <section className="w-full bg-black text-white py-16">
-        <div className="container mx-auto text-center">
-          <h2 className="text-5xl font-light pb-5">Our Work</h2>
-          <div className="flex flex-row justify-center py-5"><div className="border-gray-400 border-b w-48" /></div>
+      {/* Our Team */}
+      <section id="team" className="border-t border-white/5 bg-neutral-900/40 px-6 py-28">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading eyebrow="People" title="Our Team" />
+          <Reveal className="mx-auto max-w-2xl rounded-2xl border border-white/10 bg-white/[0.03] p-10 text-center">
+            <p className="text-neutral-400">Meet the team — coming soon.</p>
+          </Reveal>
         </div>
       </section>
 
-      <section className="w-full bg-black text-white py-16">
-        <div className="container mx-auto text-center">
-          <h2 className="text-5xl font-light pb-5">Our Team</h2>
-          <div className="flex flex-row justify-center py-5"><div className="border-gray-400 border-b w-48" /></div>
-          
-        </div>
-      </section>
-
-      <section className="w-full bg-black text-white pt-16">
-        <div className="container mx-auto text-center">
-          <h2 className="text-5xl font-light">Contact Us</h2>
-          <div className="flex flex-row justify-center py-5"><div className="border-gray-400 border-b w-48" /></div>
-          <h3 className="text-xl ">
-            Have questions?
-          </h3>
-          <div className="text-gray-400 p-5">
-            <span>
-              We&apos;re happy to help!
-              Feel free to contact us at: <a href="mailto:info@lehmanfamilyllc.com">info@lehmanfamilyllc.com</a>.
-            </span>
-            <div>
-              (812) 363-5149
+      {/* Contact */}
+      <section id="contact" className="px-6 py-28">
+        <div className="mx-auto max-w-3xl">
+          <SectionHeading eyebrow="Get in touch" title="Contact Us" />
+          <Reveal className="text-center">
+            <p className="mb-10 text-lg text-neutral-300">
+              Have questions? We&apos;re happy to help!
+            </p>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <a
+                href="mailto:info@lehmanfamilyllc.com"
+                className="group flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-8 transition hover:border-amber-400/50 hover:bg-white/[0.06]"
+              >
+                <IconMail className="h-7 w-7 text-amber-400" stroke={1.5} />
+                <span className="text-sm text-neutral-300 group-hover:text-white">
+                  info@lehmanfamilyllc.com
+                </span>
+              </a>
+              <a
+                href="tel:+18123635149"
+                className="group flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-8 transition hover:border-amber-400/50 hover:bg-white/[0.06]"
+              >
+                <IconPhone className="h-7 w-7 text-amber-400" stroke={1.5} />
+                <span className="text-sm text-neutral-300 group-hover:text-white">
+                  (812) 363-5149
+                </span>
+              </a>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
     </main>
