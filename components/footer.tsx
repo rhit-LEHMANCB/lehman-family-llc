@@ -1,26 +1,18 @@
-// components/Footer.jsx
-import React from "react";
-
 const Footer = () => {
-  
   return (
-    <footer className="w-full bg-black text-white py-6 px-4">
-      <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
-            <p className="text-sm text-gray-400">
-              © 2025 Lehman Family LLC. All rights reserved.
-            </p>
-          </div>
-        </div>
-        
-        <div className="mt-6 pt-4 border-t border-gray-800 text-center">
-          <p className="text-xs text-gray-500">
-            This website and its contents are the property of Lehman Family LLC. 
-            Unauthorized use or reproduction is prohibited.
-          </p>
-        </div>
+    <footer className="w-full border-t border-white/10 bg-neutral-950 px-6 py-10">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 md:flex-row">
+        <p className="text-sm font-medium tracking-[0.25em] text-white">
+          LEHMAN FAMILY LLC
+        </p>
+        <p className="text-xs text-neutral-500">
+          © {new Date().getFullYear()} Lehman Family LLC. All rights reserved.
+        </p>
       </div>
+      <p className="mx-auto mt-6 max-w-2xl text-center text-xs text-neutral-600">
+        This website and its contents are the property of Lehman Family LLC.
+        Unauthorized use or reproduction is prohibited.
+      </p>
     </footer>
   );
 };
